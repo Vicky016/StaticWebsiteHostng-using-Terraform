@@ -28,7 +28,7 @@ resource "aws_s3_bucket" "static_website" {
   }
 }
 
-**### `variables.tf`**
+### `variables.tf`
 
 variable "region" {
   description = "AWS region for S3 bucket"
@@ -40,3 +40,8 @@ variable "bucket_name" {
   default     = "your-unique-bucket-name" # Change this to a globally unique bucket name
 }
 
+### `provider.tf`
+
+provider "aws" {
+  region = var.region
+}
